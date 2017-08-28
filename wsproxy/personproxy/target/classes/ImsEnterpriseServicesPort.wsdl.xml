@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:i2="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0"
+                  xmlns:i0="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:i1="http://www.imsglobal.org/services/gms/wsdl/imsGroupManAbstractSync_v1p0"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+>
+    <wsp:Policy wsu:Id="BasicHttpBinding_PersonManagementServiceSync_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="BasicHttpBinding_GroupManagementServiceSync_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="BasicHttpBinding_MembershipManagementServiceSync_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="BasicHttpBinding_ExtendedPersonManagementServiceSync_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:import namespace="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0"
+                 location="https://enterprise.itsltest.com/WCFServiceLibrary/ImsEnterpriseServicesPort.svc?wsdl=wsdl0"/>
+    <wsdl:import namespace="http://www.imsglobal.org/services/gms/wsdl/imsGroupManAbstractSync_v1p0"
+                 location="https://enterprise.itsltest.com/WCFServiceLibrary/ImsEnterpriseServicesPort.svc?wsdl=wsdl2"/>
+    <wsdl:import namespace="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0"
+                 location="https://enterprise.itsltest.com/WCFServiceLibrary/ImsEnterpriseServicesPort.svc?wsdl=wsdl3"/>
+    <wsdl:types/>
+    <wsdl:binding name="BasicHttpBinding_PersonManagementServiceSync" type="i0:PersonManagementServiceSync">
+        <wsp:PolicyReference URI="#BasicHttpBinding_PersonManagementServiceSync_policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createPersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/createPersons" style="document"/>
+            <wsdl:input name="createPersonsRequest1">
+                <soap:header message="i0:createPersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createPersonsResponse1">
+                <soap:header message="i0:createPersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updatePersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/updatePersons" style="document"/>
+            <wsdl:input name="updatePersonsRequest1">
+                <soap:header message="i0:updatePersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updatePersonsResponse1">
+                <soap:header message="i0:updatePersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replacePersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/replacePersons" style="document"/>
+            <wsdl:input name="replacePersonsRequest1">
+                <soap:header message="i0:replacePersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replacePersonsResponse1">
+                <soap:header message="i0:replacePersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deletePersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/deletePersons" style="document"/>
+            <wsdl:input name="deletePersonsRequest1">
+                <soap:header message="i0:deletePersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deletePersonsResponse1">
+                <soap:header message="i0:deletePersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readPersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/readPersons" style="document"/>
+            <wsdl:input name="readPersonsRequest1">
+                <soap:header message="i0:readPersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readPersonsResponse1">
+                <soap:header message="i0:readPersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changePersonsIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/changePersonsIdentifier" style="document"/>
+            <wsdl:input name="changePersonsIdentifierRequest1">
+                <soap:header message="i0:changePersonsIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changePersonsIdentifierResponse1">
+                <soap:header message="i0:changePersonsIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createPerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/createPerson" style="document"/>
+            <wsdl:input name="createPersonRequest1">
+                <soap:header message="i0:createPersonRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createPersonResponse1">
+                <soap:header message="i0:createPersonResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updatePerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/updatePerson" style="document"/>
+            <wsdl:input name="updatePersonRequest1">
+                <soap:header message="i0:updatePersonRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updatePersonResponse1">
+                <soap:header message="i0:updatePersonResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replacePerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/replacePerson" style="document"/>
+            <wsdl:input name="replacePersonRequest1">
+                <soap:header message="i0:replacePersonRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replacePersonResponse1">
+                <soap:header message="i0:replacePersonResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deletePerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/deletePerson" style="document"/>
+            <wsdl:input name="deletePersonRequest1">
+                <soap:header message="i0:deletePersonRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deletePersonResponse1">
+                <soap:header message="i0:deletePersonResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readPerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/readPerson" style="document"/>
+            <wsdl:input name="readPersonRequest1">
+                <soap:header message="i0:readPersonRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readPersonResponse1">
+                <soap:header message="i0:readPersonResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changePersonIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/changePersonIdentifier" style="document"/>
+            <wsdl:input name="changePersonIdentifierRequest1">
+                <soap:header message="i0:changePersonIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changePersonIdentifierResponse1">
+                <soap:header message="i0:changePersonIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readPersonsForGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/readPersonsForGroup" style="document"/>
+            <wsdl:input name="readPersonsForGroupRequest1">
+                <soap:header message="i0:readPersonsForGroupRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readPersonsForGroupResponse1">
+                <soap:header message="i0:readPersonsForGroupResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BasicHttpBinding_GroupManagementServiceSync" type="i1:GroupManagementServiceSync">
+        <wsp:PolicyReference URI="#BasicHttpBinding_GroupManagementServiceSync_policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createGroups">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/createGroups" style="document"/>
+            <wsdl:input name="createGroupsRequest1">
+                <soap:header message="i1:createGroupsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createGroupsResponse1">
+                <soap:header message="i1:createGroupsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateGroups">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/updateGroups" style="document"/>
+            <wsdl:input name="updateGroupsRequest1">
+                <soap:header message="i1:updateGroupsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateGroupsResponse1">
+                <soap:header message="i1:updateGroupsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteGroups">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/deleteGroups" style="document"/>
+            <wsdl:input name="deleteGroupsRequest1">
+                <soap:header message="i1:deleteGroupsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteGroupsResponse1">
+                <soap:header message="i1:deleteGroupsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replaceGroups">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/replaceGroups" style="document"/>
+            <wsdl:input name="replaceGroupsRequest1">
+                <soap:header message="i1:replaceGroupsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replaceGroupsResponse1">
+                <soap:header message="i1:replaceGroupsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readGroups">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/readGroups" style="document"/>
+            <wsdl:input name="readGroupsRequest1">
+                <soap:header message="i1:readGroupsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readGroupsResponse1">
+                <soap:header message="i1:readGroupsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeGroupsIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/changeGroupsIdentifier" style="document"/>
+            <wsdl:input name="changeGroupsIdentifierRequest1">
+                <soap:header message="i1:changeGroupsIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeGroupsIdentifierResponse1">
+                <soap:header message="i1:changeGroupsIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/createGroup" style="document"/>
+            <wsdl:input name="createGroupRequest1">
+                <soap:header message="i1:createGroupRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createGroupResponse1">
+                <soap:header message="i1:createGroupResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/deleteGroup" style="document"/>
+            <wsdl:input name="deleteGroupRequest1">
+                <soap:header message="i1:deleteGroupRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteGroupResponse1">
+                <soap:header message="i1:deleteGroupResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/readGroup" style="document"/>
+            <wsdl:input name="readGroupRequest1">
+                <soap:header message="i1:readGroupRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readGroupResponse1">
+                <soap:header message="i1:readGroupResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/updateGroup" style="document"/>
+            <wsdl:input name="updateGroupRequest1">
+                <soap:header message="i1:updateGroupRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateGroupResponse1">
+                <soap:header message="i1:updateGroupResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replaceGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/replaceGroup" style="document"/>
+            <wsdl:input name="replaceGroupRequest1">
+                <soap:header message="i1:replaceGroupRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replaceGroupResponse1">
+                <soap:header message="i1:replaceGroupResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeGroupIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/changeGroupIdentifier" style="document"/>
+            <wsdl:input name="changeGroupIdentifierRequest1">
+                <soap:header message="i1:changeGroupIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeGroupIdentifierResponse1">
+                <soap:header message="i1:changeGroupIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readGroupsForPerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/gms/readGroupsForPerson" style="document"/>
+            <wsdl:input name="readGroupsForPersonRequest1">
+                <soap:header message="i1:readGroupsForPersonRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readGroupsForPersonResponse1">
+                <soap:header message="i1:readGroupsForPersonResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BasicHttpBinding_MembershipManagementServiceSync" type="i2:MembershipManagementServiceSync">
+        <wsp:PolicyReference URI="#BasicHttpBinding_MembershipManagementServiceSync_policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/createMemberships" style="document"/>
+            <wsdl:input name="createMembershipsRequest1">
+                <soap:header message="i2:createMembershipsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createMembershipsResponse1">
+                <soap:header message="i2:createMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/updateMemberships" style="document"/>
+            <wsdl:input name="updateMembershipsRequest1">
+                <soap:header message="i2:updateMembershipsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateMembershipsResponse1">
+                <soap:header message="i2:updateMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replaceMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/replaceMemberships" style="document"/>
+            <wsdl:input name="replaceMembershipsRequest1">
+                <soap:header message="i2:replaceMembershipsRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replaceMembershipsResponse1">
+                <soap:header message="i2:replaceMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/deleteMemberships" style="document"/>
+            <wsdl:input name="deleteMembershipsRequest1">
+                <soap:header message="i2:deleteMembershipsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteMembershipsResponse1">
+                <soap:header message="i2:deleteMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMemberships" style="document"/>
+            <wsdl:input name="readMembershipsRequest1">
+                <soap:header message="i2:readMembershipsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipsResponse1">
+                <soap:header message="i2:readMembershipsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMembershipsIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/changeMembershipsIdentifier"
+                            style="document"/>
+            <wsdl:input name="changeMembershipsIdentifierRequest1">
+                <soap:header message="i2:changeMembershipsIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeMembershipsIdentifierResponse1">
+                <soap:header message="i2:changeMembershipsIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/createMembership" style="document"/>
+            <wsdl:input name="createMembershipRequest1">
+                <soap:header message="i2:createMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createMembershipResponse1">
+                <soap:header message="i2:createMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/deleteMembership" style="document"/>
+            <wsdl:input name="deleteMembershipRequest1">
+                <soap:header message="i2:deleteMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteMembershipResponse1">
+                <soap:header message="i2:deleteMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMembership" style="document"/>
+            <wsdl:input name="readMembershipRequest1">
+                <soap:header message="i2:readMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipResponse1">
+                <soap:header message="i2:readMembershipResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/updateMembership" style="document"/>
+            <wsdl:input name="updateMembershipRequest1">
+                <soap:header message="i2:updateMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateMembershipResponse1">
+                <soap:header message="i2:updateMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replaceMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/replaceMembership" style="document"/>
+            <wsdl:input name="replaceMembershipRequest1">
+                <soap:header message="i2:replaceMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replaceMembershipResponse1">
+                <soap:header message="i2:replaceMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMembershipIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/changeMembershipIdentifier" style="document"/>
+            <wsdl:input name="changeMembershipIdentifierRequest1">
+                <soap:header message="i2:changeMembershipIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeMembershipIdentifierResponse1">
+                <soap:header message="i2:changeMembershipIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMembershipsForPerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMembershipsForPerson" style="document"/>
+            <wsdl:input name="readMembershipsForPersonRequest1">
+                <soap:header message="i2:readMembershipsForPersonRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipsForPersonResponse1">
+                <soap:header message="i2:readMembershipsForPersonResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMembershipsForGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMembershipsForGroup" style="document"/>
+            <wsdl:input name="readMembershipsForGroupRequest1">
+                <soap:header message="i2:readMembershipsForGroupRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipsForGroupResponse1">
+                <soap:header message="i2:readMembershipsForGroupResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BasicHttpBinding_ExtendedPersonManagementServiceSync"
+                  type="i0:ExtendedPersonManagementServiceSync">
+        <wsp:PolicyReference URI="#BasicHttpBinding_ExtendedPersonManagementServiceSync_policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="readAllPersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/readAllPersons" style="document"/>
+            <wsdl:input name="readAllPersonsRequest1">
+                <soap:header message="i0:readAllPersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readAllPersonsResponse1">
+                <soap:header message="i0:readAllPersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

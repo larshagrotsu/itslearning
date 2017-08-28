@@ -1,0 +1,1 @@
+&[-client, -b, /Users/lhagr/IdeaProjects/itslearning/wsproxy/personproxy/src/main/resources/bindings.xml, -p, se.su.it.itslearning.personproxyws.generated, -autoNameResolution, file:/Users/lhagr/IdeaProjects/itslearning/wsproxy/personproxy/src/main/resources/PersonManagementServiceSync.svc.xml]

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="ExtendedPersonManagementServiceSync"
+                  targetNamespace="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:Policy wsu:Id="BasicHttpBinding_ExtendedPersonManagementServiceSync_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0">
+            <xs:import namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+            <xs:import namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0"/>
+            <xs:element name="readAllPersonsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" maxOccurs="1" name="PageIndex" nillable="true" type="xs:int"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="PageSize" nillable="true" type="xs:int"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="CreatedFrom" nillable="true" type="xs:dateTime"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="OnlyManuallyCreatedUsers" nillable="true"
+                                    type="xs:boolean"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="ConvertFromManual" nillable="true"
+                                    type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="readAllPersonsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="personIdPairSet"
+                                    type="tns:ArrayOfPersonIdPairDType"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="virtualCount" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="ArrayOfPersonIdPairDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="personIdPair" type="tns:PersonIdPairDType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PersonIdPairDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                        <xs:complexType>
+                            <xs:complexContent mixed="false">
+                                <xs:extension base="tns:BaseId"/>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="person" type="q1:person"
+                                xmlns:q1="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseId">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q2:identifier"
+                                xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0">
+            <xs:import namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+            <xs:element name="syncRequestHeaderInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="syncResponseHeaderInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string"/>
+                        <xs:element minOccurs="0" maxOccurs="1" name="statusInfo" type="tns:StatusInfoDType"/>
+                        <xs:element minOccurs="0" maxOccurs="1" name="statusInfoSet" type="tns:ArrayOfStatusInfoDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="StatusInfoDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="codeMajor">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="success"/>
+                                <xs:enumeration value="unsupported"/>
+                                <xs:enumeration value="failure"/>
+                                <xs:enumeration value="processing"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="severity">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="status"/>
+                                <xs:enumeration value="warning"/>
+                                <xs:enumeration value="error"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="codeMinor" type="tns:ArrayOfCodeMinorField"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="messageIdRef" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="operationIdRef" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="description" type="q1:LangStringDType"
+                                xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCodeMinorField">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="codeMinorField">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="1" name="codeMinorName" type="xs:string"/>
+                                <xs:element minOccurs="0" maxOccurs="1" name="codeMinorValue" type="xs:string"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfStatusInfoDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="statusInfo" nillable="true"
+                                type="tns:StatusInfoDType"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0">
+            <xs:element name="identifier" type="xs:string"/>
+            <xs:complexType name="RecordMetaDataDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="comments" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="URL" type="xs:string"/>
+            <xs:complexType name="UserIdDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="userIdValue" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="userIdType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="passWord" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="pwEncryptionType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="authenticationType" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="dataSource" type="xs:string"/>
+            <xs:element name="extensionField" type="tns:extensionField"/>
+            <xs:complexType name="extensionField">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="fieldName" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="fieldType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="fieldValue" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="relationship" type="tns:RelationshipDType"/>
+            <xs:complexType name="RelationshipDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="relation">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="KnownAs"/>
+                                <xs:enumeration value="Parent"/>
+                                <xs:enumeration value="Child"/>
+                                <xs:enumeration value="1"/>
+                                <xs:enumeration value="2"/>
+                                <xs:enumeration value="3"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="sourceId">
+                        <xs:complexType>
+                            <xs:complexContent mixed="false">
+                                <xs:extension base="tns:BaseId"/>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="label" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseId">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="identifier" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LangStringDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="language">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="en-US"/>
+                                <xs:enumeration value="en-GB"/>
+                                <xs:enumeration value="aa"/>
+                                <xs:enumeration value="ab"/>
+                                <xs:enumeration value="af"/>
+                                <xs:enumeration value="am"/>
+                                <xs:enumeration value="ar"/>
+                                <xs:enumeration value="as"/>
+                                <xs:enumeration value="ay"/>
+                                <xs:enumeration value="az"/>
+                                <xs:enumeration value="ba"/>
+                                <xs:enumeration value="be"/>
+                                <xs:enumeration value="bg"/>
+                                <xs:enumeration value="bh"/>
+                                <xs:enumeration value="bi"/>
+                                <xs:enumeration value="bn"/>
+                                <xs:enumeration value="bo"/>
+                                <xs:enumeration value="br"/>
+                                <xs:enumeration value="aa"/>
+                                <xs:enumeration value="ca"/>
+                                <xs:enumeration value="co"/>
+                                <xs:enumeration value="cs"/>
+                                <xs:enumeration value="cy"/>
+                                <xs:enumeration value="da"/>
+                                <xs:enumeration value="de"/>
+                                <xs:enumeration value="dz"/>
+                                <xs:enumeration value="el"/>
+                                <xs:enumeration value="eo"/>
+                                <xs:enumeration value="es"/>
+                                <xs:enumeration value="et"/>
+                                <xs:enumeration value="eu"/>
+                                <xs:enumeration value="fa"/>
+                                <xs:enumeration value="fi"/>
+                                <xs:enumeration value="fj"/>
+                                <xs:enumeration value="fo"/>
+                                <xs:enumeration value="fr"/>
+                                <xs:enumeration value="fy"/>
+                                <xs:enumeration value="ga"/>
+                                <xs:enumeration value="gd"/>
+                                <xs:enumeration value="gl"/>
+                                <xs:enumeration value="gn"/>
+                                <xs:enumeration value="gu"/>
+                                <xs:enumeration value="ha"/>
+                                <xs:enumeration value="he"/>
+                                <xs:enumeration value="hi"/>
+                                <xs:enumeration value="hr"/>
+                                <xs:enumeration value="hu"/>
+                                <xs:enumeration value="hy"/>
+                                <xs:enumeration value="ia"/>
+                                <xs:enumeration value="id"/>
+                                <xs:enumeration value="ie"/>
+                                <xs:enumeration value="ik"/>
+                                <xs:enumeration value="is"/>
+                                <xs:enumeration value="it"/>
+                                <xs:enumeration value="iu"/>
+                                <xs:enumeration value="ja"/>
+                                <xs:enumeration value="jw"/>
+                                <xs:enumeration value="ka"/>
+                                <xs:enumeration value="kk"/>
+                                <xs:enumeration value="kl"/>
+                                <xs:enumeration value="km"/>
+                                <xs:enumeration value="kn"/>
+                                <xs:enumeration value="ko"/>
+                                <xs:enumeration value="ks"/>
+                                <xs:enumeration value="ku"/>
+                                <xs:enumeration value="ky"/>
+                                <xs:enumeration value="la"/>
+                                <xs:enumeration value="ln"/>
+                                <xs:enumeration value="lo"/>
+                                <xs:enumeration value="lt"/>
+                                <xs:enumeration value="lv"/>
+                                <xs:enumeration value="mg"/>
+                                <xs:enumeration value="mi"/>
+                                <xs:enumeration value="mk"/>
+                                <xs:enumeration value="ml"/>
+                                <xs:enumeration value="mn"/>
+                                <xs:enumeration value="mo"/>
+                                <xs:enumeration value="mr"/>
+                                <xs:enumeration value="ms"/>
+                                <xs:enumeration value="mt"/>
+                                <xs:enumeration value="my"/>
+                                <xs:enumeration value="na"/>
+                                <xs:enumeration value="ne"/>
+                                <xs:enumeration value="nl"/>
+                                <xs:enumeration value="no"/>
+                                <xs:enumeration value="oc"/>
+                                <xs:enumeration value="om"/>
+                                <xs:enumeration value="or"/>
+                                <xs:enumeration value="pa"/>
+                                <xs:enumeration value="pl"/>
+                                <xs:enumeration value="ps"/>
+                                <xs:enumeration value="pt"/>
+                                <xs:enumeration value="qu"/>
+                                <xs:enumeration value="rm"/>
+                                <xs:enumeration value="rn"/>
+                                <xs:enumeration value="ro"/>
+                                <xs:enumeration value="ru"/>
+                                <xs:enumeration value="rw"/>
+                                <xs:enumeration value="sa"/>
+                                <xs:enumeration value="sd"/>
+                                <xs:enumeration value="sg"/>
+                                <xs:enumeration value="sh"/>
+                                <xs:enumeration value="si"/>
+                                <xs:enumeration value="sk"/>
+                                <xs:enumeration value="sl"/>
+                                <xs:enumeration value="sm"/>
+                                <xs:enumeration value="sn"/>
+                                <xs:enumeration value="so"/>
+                                <xs:enumeration value="sq"/>
+                                <xs:enumeration value="sr"/>
+                                <xs:enumeration value="ss"/>
+                                <xs:enumeration value="st"/>
+                                <xs:enumeration value="su"/>
+                                <xs:enumeration value="sv"/>
+                                <xs:enumeration value="sw"/>
+                                <xs:enumeration value="ta"/>
+                                <xs:enumeration value="te"/>
+                                <xs:enumeration value="tg"/>
+                                <xs:enumeration value="th"/>
+                                <xs:enumeration value="ti"/>
+                                <xs:enumeration value="tk"/>
+                                <xs:enumeration value="tl"/>
+                                <xs:enumeration value="tn"/>
+                                <xs:enumeration value="to"/>
+                                <xs:enumeration value="tr"/>
+                                <xs:enumeration value="ts"/>
+                                <xs:enumeration value="tt"/>
+                                <xs:enumeration value="tw"/>
+                                <xs:enumeration value="ug"/>
+                                <xs:enumeration value="uk"/>
+                                <xs:enumeration value="ur"/>
+                                <xs:enumeration value="uz"/>
+                                <xs:enumeration value="vi"/>
+                                <xs:enumeration value="vo"/>
+                                <xs:enumeration value="wo"/>
+                                <xs:enumeration value="xh"/>
+                                <xs:enumeration value="yi"/>
+                                <xs:enumeration value="yo"/>
+                                <xs:enumeration value="za"/>
+                                <xs:enumeration value="zh"/>
+                                <xs:enumeration value="zu"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0">
+            <xs:import namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+            <xs:complexType name="person">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="formatName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="name" type="tns:NameDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="recordInfo" type="q1:RecordMetaDataDType"
+                                xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q2:email"
+                                xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q3:URL"
+                                xmlns:q3="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="systemRole">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="SysAdmin"/>
+                                <xs:enumeration value="SysSupport"/>
+                                <xs:enumeration value="Creator"/>
+                                <xs:enumeration value="AccountAdmin"/>
+                                <xs:enumeration value="User"/>
+                                <xs:enumeration value="Administrator"/>
+                                <xs:enumeration value="None"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="userId" type="q4:UserIdDType"
+                                xmlns:q4="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="address" type="tns:AddressDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="demographics" type="tns:DemographicsDType"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="institutionRole"
+                                type="tns:InstitutionRoleDType"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="tel" type="tns:TelDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="photo" type="tns:PhotoDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q5:dataSource"
+                                xmlns:q5="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="extension" type="tns:extensionType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="NameDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="nameType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="partName">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="1" name="namePartType" type="xs:string"/>
+                                <xs:element minOccurs="0" maxOccurs="1" name="namePartValue" type="xs:string"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AddressDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="pobox" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="extadd" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="locality" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="region" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="postcode" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="country" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="street" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DemographicsDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="gender">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Male"/>
+                                <xs:enumeration value="Female"/>
+                                <xs:enumeration value="Gender"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="disability" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="bday" type="xs:date"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InstitutionRoleDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="institutionRoleType">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Student"/>
+                                <xs:enumeration value="Faculty"/>
+                                <xs:enumeration value="Member"/>
+                                <xs:enumeration value="Learner"/>
+                                <xs:enumeration value="Instructor"/>
+                                <xs:enumeration value="Mentor"/>
+                                <xs:enumeration value="Staff"/>
+                                <xs:enumeration value="Alumni"/>
+                                <xs:enumeration value="ProspectiveStudent"/>
+                                <xs:enumeration value="Guest"/>
+                                <xs:enumeration value="Other"/>
+                                <xs:enumeration value="Administrator"/>
+                                <xs:enumeration value="Observer"/>
+                                <xs:enumeration value="Carer"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="primaryRoleType" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="TelDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="telType">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="1"/>
+                                <xs:enumeration value="2"/>
+                                <xs:enumeration value="3"/>
+                                <xs:enumeration value="4"/>
+                                <xs:enumeration value="Voice"/>
+                                <xs:enumeration value="Fax"/>
+                                <xs:enumeration value="Mobile"/>
+                                <xs:enumeration value="Pager"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="telValue" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PhotoDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="imgType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="extRef" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="extensionType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" ref="q6:extensionField"
+                                xmlns:q6="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" ref="q7:relationship"
+                                xmlns:q7="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="readAllPersonsRequest1">
+        <wsdl:part name="readAllPersonsRequest" element="q1:readAllPersonsRequest"
+                   xmlns:q1="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readAllPersonsRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q2:syncRequestHeaderInfo"
+                   xmlns:q2="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readAllPersonsResponse1">
+        <wsdl:part name="readAllPersonsResponse" element="q3:readAllPersonsResponse"
+                   xmlns:q3="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readAllPersonsResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q4:syncResponseHeaderInfo"
+                   xmlns:q4="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:portType name="ExtendedPersonManagementServiceSync">
+        <wsdl:operation name="readAllPersons">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/readAllPersons" name="readAllPersonsRequest1"
+                        message="tns:readAllPersonsRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/ExtendedPersonManagementServiceSync/readAllPersonsResponse"
+                    name="readAllPersonsResponse1" message="tns:readAllPersonsResponse1"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BasicHttpBinding_ExtendedPersonManagementServiceSync"
+                  type="tns:ExtendedPersonManagementServiceSync">
+        <wsp:PolicyReference URI="#BasicHttpBinding_ExtendedPersonManagementServiceSync_policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="readAllPersons">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/pms/readAllPersons" style="document"/>
+            <wsdl:input name="readAllPersonsRequest1">
+                <soap:header message="tns:readAllPersonsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readAllPersonsResponse1">
+                <soap:header message="tns:readAllPersonsResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ExtendedPersonManagementServiceSync">
+        <wsdl:port name="BasicHttpBinding_ExtendedPersonManagementServiceSync"
+                   binding="tns:BasicHttpBinding_ExtendedPersonManagementServiceSync">
+            <soap:address
+                    location="https://enterprise.itsltest.com/WCFServiceLibrary/ExtendedPersonManagementServiceSync.svc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

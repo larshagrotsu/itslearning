@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="MembershipManagementServiceSync"
+                  targetNamespace="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:Policy wsu:Id="BasicHttpBinding_MembershipManagementServiceSync_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:UsernameToken
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+                <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy/>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0">
+            <xs:import namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+            <xs:import namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+            <xs:element name="createMembershipsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet"
+                                    type="tns:ArrayOfMembershipIdPairDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="ArrayOfMembershipIdPairDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="membershipIdPair"
+                                type="tns:MembershipIdPairDType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MembershipIdPairDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                        <xs:complexType>
+                            <xs:complexContent mixed="false">
+                                <xs:extension base="tns:BaseId"/>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="membership" type="q1:membership"
+                                xmlns:q1="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseId">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q2:identifier"
+                                xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="createMembershipsResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="updateMembershipsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet"
+                                    type="tns:ArrayOfMembershipIdPairDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateMembershipsResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="replaceMembershipsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet"
+                                    type="tns:ArrayOfMembershipIdPairDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="replaceMembershipsResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="deleteMembershipsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q3:ArrayOfString"
+                                    xmlns:q3="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteMembershipsResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="readMembershipsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q4:ArrayOfString"
+                                    xmlns:q4="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="readMembershipsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membershipSet" type="tns:ArrayOfMembership"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="ArrayOfMembership">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="membership" type="q5:membership"
+                                xmlns:q5="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="changeMembershipsIdentifierRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="pairSourcedIdSet"
+                                    type="q6:ArrayOfIdentifierPairDType"
+                                    xmlns:q6="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="changeMembershipsIdentifierResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="createMembershipRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membership" type="q7:membership"
+                                    xmlns:q7="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createMembershipResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="deleteMembershipRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteMembershipResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="readMembershipRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="readMembershipResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membership" type="q8:membership"
+                                    xmlns:q8="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateMembershipRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membership" type="q9:membership"
+                                    xmlns:q9="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateMembershipResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="replaceMembershipRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membership" type="q10:membership"
+                                    xmlns:q10="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="replaceMembershipResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="changeMembershipIdentifierRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="sourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="1" name="newSourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="changeMembershipIdentifierResponse">
+                <xs:complexType/>
+            </xs:element>
+            <xs:element name="readMembershipsForPersonRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="personSourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="tns:BaseId"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="readMembershipsForPersonResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membershipIDPairSet"
+                                    type="tns:ArrayOfMembershipIdPairDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="readMembershipsForGroupRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="groupSourcedId">
+                            <xs:complexType>
+                                <xs:complexContent mixed="false">
+                                    <xs:extension base="q11:BaseId"
+                                                  xmlns:q11="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"/>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="readMembershipsForGroupResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="membershipIDPairSet"
+                                    type="tns:ArrayOfMembershipIdPairDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0">
+            <xs:element name="identifier" type="xs:string"/>
+            <xs:complexType name="RecordMetaDataDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="comments" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UserIdDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="userIdValue" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="userIdType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="passWord" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="pwEncryptionType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="authenticationType" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="TimeFrameDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="begin" nillable="true" type="tns:RestrictDateDType"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="end" nillable="true" type="tns:RestrictDateDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="adminPeriod" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RestrictDateDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="date" type="xs:date"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="restrict" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="dataSource" type="xs:string"/>
+            <xs:complexType name="ArrayOfExtensionField">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="extensionField" type="tns:extensionField"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="extensionField">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="fieldName" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="fieldType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="fieldValue" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LangStringDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="language">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="en-US"/>
+                                <xs:enumeration value="en-GB"/>
+                                <xs:enumeration value="aa"/>
+                                <xs:enumeration value="ab"/>
+                                <xs:enumeration value="af"/>
+                                <xs:enumeration value="am"/>
+                                <xs:enumeration value="ar"/>
+                                <xs:enumeration value="as"/>
+                                <xs:enumeration value="ay"/>
+                                <xs:enumeration value="az"/>
+                                <xs:enumeration value="ba"/>
+                                <xs:enumeration value="be"/>
+                                <xs:enumeration value="bg"/>
+                                <xs:enumeration value="bh"/>
+                                <xs:enumeration value="bi"/>
+                                <xs:enumeration value="bn"/>
+                                <xs:enumeration value="bo"/>
+                                <xs:enumeration value="br"/>
+                                <xs:enumeration value="aa"/>
+                                <xs:enumeration value="ca"/>
+                                <xs:enumeration value="co"/>
+                                <xs:enumeration value="cs"/>
+                                <xs:enumeration value="cy"/>
+                                <xs:enumeration value="da"/>
+                                <xs:enumeration value="de"/>
+                                <xs:enumeration value="dz"/>
+                                <xs:enumeration value="el"/>
+                                <xs:enumeration value="eo"/>
+                                <xs:enumeration value="es"/>
+                                <xs:enumeration value="et"/>
+                                <xs:enumeration value="eu"/>
+                                <xs:enumeration value="fa"/>
+                                <xs:enumeration value="fi"/>
+                                <xs:enumeration value="fj"/>
+                                <xs:enumeration value="fo"/>
+                                <xs:enumeration value="fr"/>
+                                <xs:enumeration value="fy"/>
+                                <xs:enumeration value="ga"/>
+                                <xs:enumeration value="gd"/>
+                                <xs:enumeration value="gl"/>
+                                <xs:enumeration value="gn"/>
+                                <xs:enumeration value="gu"/>
+                                <xs:enumeration value="ha"/>
+                                <xs:enumeration value="he"/>
+                                <xs:enumeration value="hi"/>
+                                <xs:enumeration value="hr"/>
+                                <xs:enumeration value="hu"/>
+                                <xs:enumeration value="hy"/>
+                                <xs:enumeration value="ia"/>
+                                <xs:enumeration value="id"/>
+                                <xs:enumeration value="ie"/>
+                                <xs:enumeration value="ik"/>
+                                <xs:enumeration value="is"/>
+                                <xs:enumeration value="it"/>
+                                <xs:enumeration value="iu"/>
+                                <xs:enumeration value="ja"/>
+                                <xs:enumeration value="jw"/>
+                                <xs:enumeration value="ka"/>
+                                <xs:enumeration value="kk"/>
+                                <xs:enumeration value="kl"/>
+                                <xs:enumeration value="km"/>
+                                <xs:enumeration value="kn"/>
+                                <xs:enumeration value="ko"/>
+                                <xs:enumeration value="ks"/>
+                                <xs:enumeration value="ku"/>
+                                <xs:enumeration value="ky"/>
+                                <xs:enumeration value="la"/>
+                                <xs:enumeration value="ln"/>
+                                <xs:enumeration value="lo"/>
+                                <xs:enumeration value="lt"/>
+                                <xs:enumeration value="lv"/>
+                                <xs:enumeration value="mg"/>
+                                <xs:enumeration value="mi"/>
+                                <xs:enumeration value="mk"/>
+                                <xs:enumeration value="ml"/>
+                                <xs:enumeration value="mn"/>
+                                <xs:enumeration value="mo"/>
+                                <xs:enumeration value="mr"/>
+                                <xs:enumeration value="ms"/>
+                                <xs:enumeration value="mt"/>
+                                <xs:enumeration value="my"/>
+                                <xs:enumeration value="na"/>
+                                <xs:enumeration value="ne"/>
+                                <xs:enumeration value="nl"/>
+                                <xs:enumeration value="no"/>
+                                <xs:enumeration value="oc"/>
+                                <xs:enumeration value="om"/>
+                                <xs:enumeration value="or"/>
+                                <xs:enumeration value="pa"/>
+                                <xs:enumeration value="pl"/>
+                                <xs:enumeration value="ps"/>
+                                <xs:enumeration value="pt"/>
+                                <xs:enumeration value="qu"/>
+                                <xs:enumeration value="rm"/>
+                                <xs:enumeration value="rn"/>
+                                <xs:enumeration value="ro"/>
+                                <xs:enumeration value="ru"/>
+                                <xs:enumeration value="rw"/>
+                                <xs:enumeration value="sa"/>
+                                <xs:enumeration value="sd"/>
+                                <xs:enumeration value="sg"/>
+                                <xs:enumeration value="sh"/>
+                                <xs:enumeration value="si"/>
+                                <xs:enumeration value="sk"/>
+                                <xs:enumeration value="sl"/>
+                                <xs:enumeration value="sm"/>
+                                <xs:enumeration value="sn"/>
+                                <xs:enumeration value="so"/>
+                                <xs:enumeration value="sq"/>
+                                <xs:enumeration value="sr"/>
+                                <xs:enumeration value="ss"/>
+                                <xs:enumeration value="st"/>
+                                <xs:enumeration value="su"/>
+                                <xs:enumeration value="sv"/>
+                                <xs:enumeration value="sw"/>
+                                <xs:enumeration value="ta"/>
+                                <xs:enumeration value="te"/>
+                                <xs:enumeration value="tg"/>
+                                <xs:enumeration value="th"/>
+                                <xs:enumeration value="ti"/>
+                                <xs:enumeration value="tk"/>
+                                <xs:enumeration value="tl"/>
+                                <xs:enumeration value="tn"/>
+                                <xs:enumeration value="to"/>
+                                <xs:enumeration value="tr"/>
+                                <xs:enumeration value="ts"/>
+                                <xs:enumeration value="tt"/>
+                                <xs:enumeration value="tw"/>
+                                <xs:enumeration value="ug"/>
+                                <xs:enumeration value="uk"/>
+                                <xs:enumeration value="ur"/>
+                                <xs:enumeration value="uz"/>
+                                <xs:enumeration value="vi"/>
+                                <xs:enumeration value="vo"/>
+                                <xs:enumeration value="wo"/>
+                                <xs:enumeration value="xh"/>
+                                <xs:enumeration value="yi"/>
+                                <xs:enumeration value="yo"/>
+                                <xs:enumeration value="za"/>
+                                <xs:enumeration value="zh"/>
+                                <xs:enumeration value="zu"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfString">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="identifier" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfIdentifierPairDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="identifierPair"
+                                type="tns:IdentifierPairDType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="IdentifierPairDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="firstId" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="secondId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0">
+            <xs:import namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+            <xs:complexType name="membership">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="groupSourcedId">
+                        <xs:complexType>
+                            <xs:complexContent mixed="false">
+                                <xs:extension base="tns:BaseId"/>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="member" type="tns:MemberDType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseId">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q1:identifier"
+                                xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MemberDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="memberSourcedId">
+                        <xs:complexType>
+                            <xs:complexContent mixed="false">
+                                <xs:extension base="tns:BaseId"/>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="idType">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="1"/>
+                                <xs:enumeration value="2"/>
+                                <xs:enumeration value="Person"/>
+                                <xs:enumeration value="Group"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="role" type="tns:RoleDType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RoleDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="roleType">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Learner"/>
+                                <xs:enumeration value="Instructor"/>
+                                <xs:enumeration value="ContentDeveloper"/>
+                                <xs:enumeration value="Member"/>
+                                <xs:enumeration value="Manager"/>
+                                <xs:enumeration value="Mentor"/>
+                                <xs:enumeration value="Administrator"/>
+                                <xs:enumeration value="TeachingAssistant"/>
+                                <xs:enumeration value="01"/>
+                                <xs:enumeration value="02"/>
+                                <xs:enumeration value="03"/>
+                                <xs:enumeration value="04"/>
+                                <xs:enumeration value="05"/>
+                                <xs:enumeration value="06"/>
+                                <xs:enumeration value="07"/>
+                                <xs:enumeration value="08"/>
+                                <xs:enumeration value="Default"/>
+                                <xs:enumeration value="Guest"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="subRole" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="recordInfo" type="q2:RecordMetaDataDType"
+                                xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="userId" type="q3:UserIdDType"
+                                xmlns:q3="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="timeFrame" type="q4:TimeFrameDType"
+                                xmlns:q4="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:boolean"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="dateTime" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q5:email"
+                                xmlns:q5="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="interimResult" type="tns:ResultDType"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="finalResult" type="tns:ResultDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" ref="q6:dataSource"
+                                xmlns:q6="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="extension" type="q7:ArrayOfExtensionField"
+                                xmlns:q7="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ResultDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="resultType" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="recordInfo" type="q8:RecordMetaDataDType"
+                                xmlns:q8="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="values" type="tns:ValuesDType"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="mode" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="result" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ValuesDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="valueType">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="0"/>
+                                <xs:enumeration value="1"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:element minOccurs="0" maxOccurs="1" name="list" type="xs:string"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="max" nillable="true" type="xs:decimal"/>
+                        <xs:element minOccurs="1" maxOccurs="1" name="min" nillable="true" type="xs:decimal"/>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0">
+            <xs:import namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+            <xs:element name="syncRequestHeaderInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="syncResponseHeaderInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string"/>
+                        <xs:element minOccurs="0" maxOccurs="1" name="statusInfo" type="tns:StatusInfoDType"/>
+                        <xs:element minOccurs="0" maxOccurs="1" name="statusInfoSet" type="tns:ArrayOfStatusInfoDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="StatusInfoDType">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="codeMajor">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="success"/>
+                                <xs:enumeration value="unsupported"/>
+                                <xs:enumeration value="failure"/>
+                                <xs:enumeration value="processing"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="severity">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="status"/>
+                                <xs:enumeration value="warning"/>
+                                <xs:enumeration value="error"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="1" name="codeMinor" type="tns:ArrayOfCodeMinorField"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="messageIdRef" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="operationIdRef" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="description" type="q1:LangStringDType"
+                                xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfCodeMinorField">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="codeMinorField">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="1" name="codeMinorName" type="xs:string"/>
+                                <xs:element minOccurs="0" maxOccurs="1" name="codeMinorValue" type="xs:string"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfStatusInfoDType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="statusInfo" nillable="true"
+                                type="tns:StatusInfoDType"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="createMembershipsRequest1">
+        <wsdl:part name="createMembershipsRequest" element="q1:createMembershipsRequest"
+                   xmlns:q1="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipsRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q2:syncRequestHeaderInfo"
+                   xmlns:q2="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipsResponse1">
+        <wsdl:part name="createMembershipsResponse" element="q3:createMembershipsResponse"
+                   xmlns:q3="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipsResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q4:syncResponseHeaderInfo"
+                   xmlns:q4="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipsRequest1">
+        <wsdl:part name="updateMembershipsRequest" element="q5:updateMembershipsRequest"
+                   xmlns:q5="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipsRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q6:syncRequestHeaderInfo"
+                   xmlns:q6="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipsResponse1">
+        <wsdl:part name="updateMembershipsResponse" element="q7:updateMembershipsResponse"
+                   xmlns:q7="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipsResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q8:syncResponseHeaderInfo"
+                   xmlns:q8="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipsRequest1">
+        <wsdl:part name="replaceMembershipsRequest" element="q9:replaceMembershipsRequest"
+                   xmlns:q9="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipsRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q10:syncRequestHeaderInfo"
+                   xmlns:q10="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipsResponse1">
+        <wsdl:part name="replaceMembershipsResponse" element="q11:replaceMembershipsResponse"
+                   xmlns:q11="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipsResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q12:syncResponseHeaderInfo"
+                   xmlns:q12="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipsRequest1">
+        <wsdl:part name="deleteMembershipsRequest" element="q13:deleteMembershipsRequest"
+                   xmlns:q13="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipsRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q14:syncRequestHeaderInfo"
+                   xmlns:q14="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipsResponse1">
+        <wsdl:part name="deleteMembershipsResponse" element="q15:deleteMembershipsResponse"
+                   xmlns:q15="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipsResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q16:syncResponseHeaderInfo"
+                   xmlns:q16="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsRequest1">
+        <wsdl:part name="readMembershipsRequest" element="q17:readMembershipsRequest"
+                   xmlns:q17="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q18:syncRequestHeaderInfo"
+                   xmlns:q18="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsResponse1">
+        <wsdl:part name="readMembershipsResponse" element="q19:readMembershipsResponse"
+                   xmlns:q19="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q20:syncResponseHeaderInfo"
+                   xmlns:q20="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipsIdentifierRequest1">
+        <wsdl:part name="changeMembershipsIdentifierRequest" element="q21:changeMembershipsIdentifierRequest"
+                   xmlns:q21="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipsIdentifierRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q22:syncRequestHeaderInfo"
+                   xmlns:q22="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipsIdentifierResponse1">
+        <wsdl:part name="changeMembershipsIdentifierResponse" element="q23:changeMembershipsIdentifierResponse"
+                   xmlns:q23="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipsIdentifierResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q24:syncResponseHeaderInfo"
+                   xmlns:q24="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipRequest1">
+        <wsdl:part name="createMembershipRequest" element="q25:createMembershipRequest"
+                   xmlns:q25="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q26:syncRequestHeaderInfo"
+                   xmlns:q26="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipResponse1">
+        <wsdl:part name="createMembershipResponse" element="q27:createMembershipResponse"
+                   xmlns:q27="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="createMembershipResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q28:syncResponseHeaderInfo"
+                   xmlns:q28="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipRequest1">
+        <wsdl:part name="deleteMembershipRequest" element="q29:deleteMembershipRequest"
+                   xmlns:q29="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q30:syncRequestHeaderInfo"
+                   xmlns:q30="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipResponse1">
+        <wsdl:part name="deleteMembershipResponse" element="q31:deleteMembershipResponse"
+                   xmlns:q31="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="deleteMembershipResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q32:syncResponseHeaderInfo"
+                   xmlns:q32="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipRequest1">
+        <wsdl:part name="readMembershipRequest" element="q33:readMembershipRequest"
+                   xmlns:q33="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q34:syncRequestHeaderInfo"
+                   xmlns:q34="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipResponse1">
+        <wsdl:part name="readMembershipResponse" element="q35:readMembershipResponse"
+                   xmlns:q35="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q36:syncResponseHeaderInfo"
+                   xmlns:q36="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipRequest1">
+        <wsdl:part name="updateMembershipRequest" element="q37:updateMembershipRequest"
+                   xmlns:q37="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q38:syncRequestHeaderInfo"
+                   xmlns:q38="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipResponse1">
+        <wsdl:part name="updateMembershipResponse" element="q39:updateMembershipResponse"
+                   xmlns:q39="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="updateMembershipResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q40:syncResponseHeaderInfo"
+                   xmlns:q40="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipRequest1">
+        <wsdl:part name="replaceMembershipRequest" element="q41:replaceMembershipRequest"
+                   xmlns:q41="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q42:syncRequestHeaderInfo"
+                   xmlns:q42="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipResponse1">
+        <wsdl:part name="replaceMembershipResponse" element="q43:replaceMembershipResponse"
+                   xmlns:q43="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="replaceMembershipResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q44:syncResponseHeaderInfo"
+                   xmlns:q44="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipIdentifierRequest1">
+        <wsdl:part name="changeMembershipIdentifierRequest" element="q45:changeMembershipIdentifierRequest"
+                   xmlns:q45="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipIdentifierRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q46:syncRequestHeaderInfo"
+                   xmlns:q46="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipIdentifierResponse1">
+        <wsdl:part name="changeMembershipIdentifierResponse" element="q47:changeMembershipIdentifierResponse"
+                   xmlns:q47="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="changeMembershipIdentifierResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q48:syncResponseHeaderInfo"
+                   xmlns:q48="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForPersonRequest1">
+        <wsdl:part name="readMembershipsForPersonRequest" element="q49:readMembershipsForPersonRequest"
+                   xmlns:q49="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForPersonRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q50:syncRequestHeaderInfo"
+                   xmlns:q50="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForPersonResponse1">
+        <wsdl:part name="readMembershipsForPersonResponse" element="q51:readMembershipsForPersonResponse"
+                   xmlns:q51="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForPersonResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q52:syncResponseHeaderInfo"
+                   xmlns:q52="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForGroupRequest1">
+        <wsdl:part name="readMembershipsForGroupRequest" element="q53:readMembershipsForGroupRequest"
+                   xmlns:q53="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForGroupRequest1_Headers">
+        <wsdl:part name="syncRequestHeaderInfo" element="q54:syncRequestHeaderInfo"
+                   xmlns:q54="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForGroupResponse1">
+        <wsdl:part name="readMembershipsForGroupResponse" element="q55:readMembershipsForGroupResponse"
+                   xmlns:q55="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:message name="readMembershipsForGroupResponse1_Headers">
+        <wsdl:part name="syncResponseHeaderInfo" element="q56:syncResponseHeaderInfo"
+                   xmlns:q56="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0"/>
+    </wsdl:message>
+    <wsdl:portType name="MembershipManagementServiceSync">
+        <wsdl:operation name="createMemberships">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/createMemberships"
+                        name="createMembershipsRequest1" message="tns:createMembershipsRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/createMembershipsResponse"
+                    name="createMembershipsResponse1" message="tns:createMembershipsResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateMemberships">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/updateMemberships"
+                        name="updateMembershipsRequest1" message="tns:updateMembershipsRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/updateMembershipsResponse"
+                    name="updateMembershipsResponse1" message="tns:updateMembershipsResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="replaceMemberships">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/replaceMemberships"
+                        name="replaceMembershipsRequest1" message="tns:replaceMembershipsRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/replaceMembershipsResponse"
+                    name="replaceMembershipsResponse1" message="tns:replaceMembershipsResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMemberships">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/deleteMemberships"
+                        name="deleteMembershipsRequest1" message="tns:deleteMembershipsRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/deleteMembershipsResponse"
+                    name="deleteMembershipsResponse1" message="tns:deleteMembershipsResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="readMemberships">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMemberships" name="readMembershipsRequest1"
+                        message="tns:readMembershipsRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipsResponse"
+                    name="readMembershipsResponse1" message="tns:readMembershipsResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="changeMembershipsIdentifier">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/changeMembershipsIdentifier"
+                        name="changeMembershipsIdentifierRequest1" message="tns:changeMembershipsIdentifierRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/changeMembershipsIdentifierResponse"
+                    name="changeMembershipsIdentifierResponse1" message="tns:changeMembershipsIdentifierResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="createMembership">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/createMembership" name="createMembershipRequest1"
+                        message="tns:createMembershipRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/createMembershipResponse"
+                    name="createMembershipResponse1" message="tns:createMembershipResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMembership">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/deleteMembership" name="deleteMembershipRequest1"
+                        message="tns:deleteMembershipRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/deleteMembershipResponse"
+                    name="deleteMembershipResponse1" message="tns:deleteMembershipResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="readMembership">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMembership" name="readMembershipRequest1"
+                        message="tns:readMembershipRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipResponse"
+                    name="readMembershipResponse1" message="tns:readMembershipResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateMembership">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/updateMembership" name="updateMembershipRequest1"
+                        message="tns:updateMembershipRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/updateMembershipResponse"
+                    name="updateMembershipResponse1" message="tns:updateMembershipResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="replaceMembership">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/replaceMembership"
+                        name="replaceMembershipRequest1" message="tns:replaceMembershipRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/replaceMembershipResponse"
+                    name="replaceMembershipResponse1" message="tns:replaceMembershipResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="changeMembershipIdentifier">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/changeMembershipIdentifier"
+                        name="changeMembershipIdentifierRequest1" message="tns:changeMembershipIdentifierRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/changeMembershipIdentifierResponse"
+                    name="changeMembershipIdentifierResponse1" message="tns:changeMembershipIdentifierResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="readMembershipsForPerson">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMembershipsForPerson"
+                        name="readMembershipsForPersonRequest1" message="tns:readMembershipsForPersonRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipsForPersonResponse"
+                    name="readMembershipsForPersonResponse1" message="tns:readMembershipsForPersonResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="readMembershipsForGroup">
+            <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMembershipsForGroup"
+                        name="readMembershipsForGroupRequest1" message="tns:readMembershipsForGroupRequest1"/>
+            <wsdl:output
+                    wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipsForGroupResponse"
+                    name="readMembershipsForGroupResponse1" message="tns:readMembershipsForGroupResponse1"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BasicHttpBinding_MembershipManagementServiceSync" type="tns:MembershipManagementServiceSync">
+        <wsp:PolicyReference URI="#BasicHttpBinding_MembershipManagementServiceSync_policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/createMemberships" style="document"/>
+            <wsdl:input name="createMembershipsRequest1">
+                <soap:header message="tns:createMembershipsRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createMembershipsResponse1">
+                <soap:header message="tns:createMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/updateMemberships" style="document"/>
+            <wsdl:input name="updateMembershipsRequest1">
+                <soap:header message="tns:updateMembershipsRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateMembershipsResponse1">
+                <soap:header message="tns:updateMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replaceMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/replaceMemberships" style="document"/>
+            <wsdl:input name="replaceMembershipsRequest1">
+                <soap:header message="tns:replaceMembershipsRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replaceMembershipsResponse1">
+                <soap:header message="tns:replaceMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/deleteMemberships" style="document"/>
+            <wsdl:input name="deleteMembershipsRequest1">
+                <soap:header message="tns:deleteMembershipsRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteMembershipsResponse1">
+                <soap:header message="tns:deleteMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMemberships">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMemberships" style="document"/>
+            <wsdl:input name="readMembershipsRequest1">
+                <soap:header message="tns:readMembershipsRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipsResponse1">
+                <soap:header message="tns:readMembershipsResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMembershipsIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/changeMembershipsIdentifier"
+                            style="document"/>
+            <wsdl:input name="changeMembershipsIdentifierRequest1">
+                <soap:header message="tns:changeMembershipsIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeMembershipsIdentifierResponse1">
+                <soap:header message="tns:changeMembershipsIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/createMembership" style="document"/>
+            <wsdl:input name="createMembershipRequest1">
+                <soap:header message="tns:createMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createMembershipResponse1">
+                <soap:header message="tns:createMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/deleteMembership" style="document"/>
+            <wsdl:input name="deleteMembershipRequest1">
+                <soap:header message="tns:deleteMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteMembershipResponse1">
+                <soap:header message="tns:deleteMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMembership" style="document"/>
+            <wsdl:input name="readMembershipRequest1">
+                <soap:header message="tns:readMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipResponse1">
+                <soap:header message="tns:readMembershipResponse1_Headers" part="syncResponseHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/updateMembership" style="document"/>
+            <wsdl:input name="updateMembershipRequest1">
+                <soap:header message="tns:updateMembershipRequest1_Headers" part="syncRequestHeaderInfo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateMembershipResponse1">
+                <soap:header message="tns:updateMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="replaceMembership">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/replaceMembership" style="document"/>
+            <wsdl:input name="replaceMembershipRequest1">
+                <soap:header message="tns:replaceMembershipRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="replaceMembershipResponse1">
+                <soap:header message="tns:replaceMembershipResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMembershipIdentifier">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/changeMembershipIdentifier" style="document"/>
+            <wsdl:input name="changeMembershipIdentifierRequest1">
+                <soap:header message="tns:changeMembershipIdentifierRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeMembershipIdentifierResponse1">
+                <soap:header message="tns:changeMembershipIdentifierResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMembershipsForPerson">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMembershipsForPerson" style="document"/>
+            <wsdl:input name="readMembershipsForPersonRequest1">
+                <soap:header message="tns:readMembershipsForPersonRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipsForPersonResponse1">
+                <soap:header message="tns:readMembershipsForPersonResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="readMembershipsForGroup">
+            <soap:operation soapAction="http://www.imsglobal.org/soap/mms/readMembershipsForGroup" style="document"/>
+            <wsdl:input name="readMembershipsForGroupRequest1">
+                <soap:header message="tns:readMembershipsForGroupRequest1_Headers" part="syncRequestHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="readMembershipsForGroupResponse1">
+                <soap:header message="tns:readMembershipsForGroupResponse1_Headers" part="syncResponseHeaderInfo"
+                             use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MembershipManagementServiceSync">
+        <wsdl:port name="BasicHttpBinding_MembershipManagementServiceSync"
+                   binding="tns:BasicHttpBinding_MembershipManagementServiceSync">
+            <soap:address
+                    location="https://enterprise.itsltest.com/WCFServiceLibrary/MembershipManagementServiceSync.svc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

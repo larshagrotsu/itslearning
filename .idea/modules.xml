@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/itslcommon/itslcommon.iml" filepath="$PROJECT_DIR$/itslcommon/itslcommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itslearning.iml" filepath="$PROJECT_DIR$/itslearning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" filepath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" filepath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" filepath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wsproxy/wsproxy.iml" filepath="$PROJECT_DIR$/wsproxy/wsproxy.iml" />
+    </modules>
+  </component>
+</project>

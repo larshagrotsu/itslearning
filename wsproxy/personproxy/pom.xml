@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wsproxy</artifactId>
+        <groupId>se.su.itslearning.integration</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>personproxy</artifactId>
+    <packaging>jar</packaging>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>${cxf.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <sourceRoot>${basedir}/src/main/java</sourceRoot>
+                            <wsdlOptions>
+                                <wsdlOption>
+
+                                    <wsdl>${basedir}/src/main/resources/PersonManagementServiceSync.svc.xml</wsdl>
+                                    <extraargs>
+                                        <extraarg>-client</extraarg>
+                                        <extraarg>-b</extraarg>
+                                        <extraarg>${basedir}/src/main/resources/bindings.xml</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>se.su.it.itslearning.personproxyws.generated</extraarg>
+                                        <extraarg>-autoNameResolution</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+
+                                    <wsdl>${basedir}/src/main/resources/ExtendedPersonManagementServiceSync.xml</wsdl>
+                                    <extraargs>
+                                        <extraarg>-client</extraarg>
+                                        <extraarg>-b</extraarg>
+                                        <extraarg>${basedir}/src/main/resources/bindings.xml</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>se.su.it.itslearning.extendedpersonproxyws.generated</extraarg>
+                                        <extraarg>-autoNameResolution</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+
+                            </wsdlOptions>
+
+                        </configuration>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
