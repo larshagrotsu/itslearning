@@ -1,0 +1,45 @@
+.gradle/
+build/
+src/main/java/
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+.idea
+*.iml
+*.ipr
+*.iws
+.project
+.settings
+.classpath
+.asscache
+out/*
+*.class
+
+*/generated/*.java
+
+
+# IDEs and editors
+/.idea
+/.idea/*
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+
+
+# System Files
+.DS_Store
+Thumbs.db
