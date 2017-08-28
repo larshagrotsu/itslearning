@@ -1,7 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da1f76d4-7732-4891-a60a-bddd24089b38" name="Default" comment="" />
+    <list default="true" id="da1f76d4-7732-4891-a60a-bddd24089b38" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/itslcommon/target/itslcommon-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/itslcommon/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/itslcommon/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/itslcommon/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/MembershipManagementServiceSync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfCodeMinorField$CodeMinorField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfCodeMinorField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfExtensionField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfIdentifierPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfMembership.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfMembershipIdPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfStatusInfoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ArrayOfString.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/BaseId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/BaseId2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ChangeMembershipIdentifierRequest$NewSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ChangeMembershipIdentifierRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ChangeMembershipIdentifierRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ChangeMembershipIdentifierResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ChangeMembershipsIdentifierRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ChangeMembershipsIdentifierResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/CreateMembershipRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/CreateMembershipRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/CreateMembershipResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/CreateMembershipsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/CreateMembershipsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/DeleteMembershipRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/DeleteMembershipRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/DeleteMembershipResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/DeleteMembershipsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/DeleteMembershipsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ExtensionField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/IdentifierPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/LangStringDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MemberDType$MemberSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MemberDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/Membership$GroupSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/Membership.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MembershipIdPairDType$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MembershipIdPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MembershipManagementServiceSync.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MembershipManagementServiceSync_BasicHttpBindingMembershipManagementServiceSync_Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/MembershipManagementServiceSync_Service.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ObjectFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsForGroupRequest$GroupSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsForGroupRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsForGroupResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsForPersonRequest$PersonSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsForPersonRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsForPersonResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReadMembershipsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/RecordMetaDataDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReplaceMembershipRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReplaceMembershipRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReplaceMembershipResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReplaceMembershipsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ReplaceMembershipsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/RestrictDateDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ResultDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/RoleDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/StatusInfoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/SyncRequestHeaderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/SyncResponseHeaderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/TimeFrameDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/UpdateMembershipRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/UpdateMembershipRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/UpdateMembershipResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/UpdateMembershipsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/UpdateMembershipsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/UserIdDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/ValuesDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/classes/se/su/it/itslearning/membershipproxyws/generated/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/cxf-codegen-plugin-markers/.4DEFE99309F786855FC2196AE175E46EF714ABD5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/target/membershipproxy-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/ExtendedPersonManagementServiceSync.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/ImsEnterpriseServicesPort.wsdl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/ImsEnterpriseServicesPort.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/PersonManagementServiceSync.svc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/PersonManagementServiceSync.wsdl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/bindings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/AddressDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ArrayOfCodeMinorField$CodeMinorField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ArrayOfCodeMinorField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ArrayOfPersonIdPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ArrayOfStatusInfoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/BaseId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/BaseId2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/DemographicsDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ExtendedPersonManagementServiceSync.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ExtendedPersonManagementServiceSync_BasicHttpBindingExtendedPersonManagementServiceSync_Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ExtendedPersonManagementServiceSync_Service.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ExtensionField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ExtensionType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/InstitutionRoleDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/LangStringDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/NameDType$PartName.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/NameDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ObjectFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/PersonIdPairDType$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/PersonIdPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/PhotoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ReadAllPersonsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/ReadAllPersonsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/RecordMetaDataDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/RelationshipDType$SourceId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/RelationshipDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/StatusInfoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/SyncRequestHeaderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/SyncResponseHeaderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/TelDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/UserIdDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/extendedpersonproxyws/generated/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/AddressDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfCodeMinorField$CodeMinorField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfCodeMinorField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfIdentifierPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfPerson.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfPersonIdPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfStatusInfoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ArrayOfString.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/BaseId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/BaseId2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ChangePersonIdentifierRequest$NewSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ChangePersonIdentifierRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ChangePersonIdentifierRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ChangePersonIdentifierResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ChangePersonsIdentifierRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ChangePersonsIdentifierResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/CreatePersonRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/CreatePersonRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/CreatePersonResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/CreatePersonsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/CreatePersonsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/DeletePersonRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/DeletePersonRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/DeletePersonResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/DeletePersonsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/DeletePersonsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/DemographicsDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ExtensionField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ExtensionType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/IdentifierPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/InstitutionRoleDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/LangStringDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/NameDType$PartName.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/NameDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ObjectFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/PersonIdPairDType$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/PersonIdPairDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/PersonManagementServiceSync.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/PersonManagementServiceSync_BasicHttpBindingPersonManagementServiceSync_Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/PersonManagementServiceSync_Service.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/PhotoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonsForGroupRequest$GroupSourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonsForGroupRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonsForGroupResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReadPersonsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/RecordMetaDataDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/RelationshipDType$SourceId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/RelationshipDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReplacePersonRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReplacePersonRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReplacePersonResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReplacePersonsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/ReplacePersonsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/StatusInfoDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/SyncRequestHeaderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/SyncResponseHeaderInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/TelDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/UpdatePersonRequest$SourcedId.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/UpdatePersonRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/UpdatePersonResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/UpdatePersonsRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/UpdatePersonsResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/UserIdDType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/classes/se/su/it/itslearning/personproxyws/generated/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/cxf-codegen-plugin-markers/.BEA5F31409D6CAE7DDA87BA3B7C721CE37A7A84B" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/cxf-codegen-plugin-markers/.F0210F5B9B56DBAA6392AE3F409FDBFFD7CBE4C9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/target/personproxy-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/classes/itslearningwsconfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/classes/se/su/it/itslearning/integration/wsclient/util/CxfClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/classes/se/su/it/itslearning/integration/wsclient/util/WSSecurityHeaderSOAPHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/classes/se/su/it/itslearning/integration/wsclient/util/WsConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/surefire-reports/TEST-se.su.it.itslearning.integration.wsclient.PersonproxyTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/surefire-reports/se.su.it.itslearning.integration.wsclient.PersonproxyTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/target/test-classes/se/su/it/itslearning/integration/wsclient/PersonproxyTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/personproxy/target/" />
@@ -57,31 +267,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceImpl.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.12/cxf-rt-frontend-jaxws-3.1.12.jar!/org/apache/cxf/jaxws/ServiceImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="349" column="0" lean-forward="false" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CxfClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wsproxy/wsclient/src/main/java/se/su/it/itslearning/integration/wsclient/util/CxfClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
-              <caret line="49" column="31" lean-forward="true" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+              <caret line="49" column="31" lean-forward="false" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonManagementServiceSync.svc.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonManagementServiceSync.svc.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wsproxy/personproxy/src/main/resources/PersonManagementServiceSync.svc.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="667">
               <caret line="1188" column="30" lean-forward="false" selection-start-line="1188" selection-start-column="30" selection-end-line="1188" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -106,20 +326,10 @@
         <entry file="file://$PROJECT_DIR$/wsproxy/wsclient/src/test/java/se/su/it/itslearning/integration/wsclient/PersonproxyTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PolicyEngineImpl.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-ws-policy/3.1.12/cxf-rt-ws-policy-3.1.12.jar!/org/apache/cxf/ws/policy/PolicyEngineImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="585" column="0" lean-forward="false" selection-start-line="585" selection-start-column="0" selection-end-line="585" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -202,6 +412,7 @@
         <option value="$PROJECT_DIR$/wsproxy/wsclient/pom.xml" />
         <option value="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" />
         <option value="$PROJECT_DIR$/wsproxy/wsclient/src/main/java/se/su/it/itslearning/integration/wsclient/util/CxfClient.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -353,116 +564,6 @@
       </pane>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="personproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="personproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="personproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wsproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="personproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="itslearning" />
@@ -1089,7 +1190,7 @@
       <updated>1503479143384</updated>
       <workItem from="1503479155250" duration="5118000" />
       <workItem from="1503492046241" duration="4819000" />
-      <workItem from="1503562887582" duration="23475000" />
+      <workItem from="1503562887582" duration="24037000" />
     </task>
     <servers />
   </component>
@@ -1126,11 +1227,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33412000" />
+    <option name="totallyTimeSpent" value="33974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1153,7 +1253,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31616595" sideWeight="0.73049647" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46423462" sideWeight="0.73049647" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37124464" sideWeight="0.26998225" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1265,7 +1365,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/personproxy/target/generated/cxf/org/imsglobal/services/pms/wsdl/imspersonmanabstractsync_v1p0/PersonManagementServiceSync.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/javax/xml/ws/WebServiceFeature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1517,14 +1616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/itslcommon/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1639,7 +1730,7 @@
     <entry file="file://$PROJECT_DIR$/wsproxy/wsclient/src/test/java/se/su/it/itslearning/integration/wsclient/PersonproxyTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1662,7 +1753,7 @@
     <entry file="file://$PROJECT_DIR$/wsproxy/wsclient/src/main/java/se/su/it/itslearning/integration/wsclient/util/CxfClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
-          <caret line="49" column="31" lean-forward="true" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+          <caret line="49" column="31" lean-forward="false" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1689,6 +1780,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
           <caret line="1188" column="30" lean-forward="false" selection-start-line="1188" selection-start-column="30" selection-end-line="1188" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding />
         </state>
       </provider>
