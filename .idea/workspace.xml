@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da1f76d4-7732-4891-a60a-bddd24089b38" name="Default" comment="Added cacert to be used when calling enterprise.itsltest.com">
+    <list default="true" id="da1f76d4-7732-4891-a60a-bddd24089b38" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_2_11.xml" afterPath="" />
@@ -38,12 +38,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/itslcommon/itslcommon.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/itslearning.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" afterPath="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1140,7 +1134,7 @@
       <updated>1503479143384</updated>
       <workItem from="1503479155250" duration="5118000" />
       <workItem from="1503492046241" duration="4819000" />
-      <workItem from="1503562887582" duration="38223000" />
+      <workItem from="1503562887582" duration="38314000" />
     </task>
     <task id="LOCAL-00001" summary="Remove">
       <created>1503914225273</created>
@@ -1198,7 +1192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503991502254</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="unversion">
+      <created>1503991778810</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1503991778810</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1234,7 +1235,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48160000" />
+    <option name="totallyTimeSpent" value="48251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1317,7 +1318,8 @@
     <MESSAGE value="Added cacert to be used when calling enterprise.itsltest.com" />
     <MESSAGE value="Unversioned files" />
     <MESSAGE value="Unversioned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unversioned" />
+    <MESSAGE value="unversion" />
+    <option name="LAST_COMMIT_MESSAGE" value="unversion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
