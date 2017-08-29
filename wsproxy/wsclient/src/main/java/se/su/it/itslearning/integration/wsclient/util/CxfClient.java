@@ -8,6 +8,7 @@ import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
 import se.su.it.itslearning.extendedpersonproxyws.generated.ExtendedPersonManagementServiceSync;
 import se.su.it.itslearning.extendedpersonproxyws.generated.ExtendedPersonManagementServiceSync_Service;
+import se.su.it.itslearning.integration.common.util.ItslearningRuntimeException;
 import se.su.it.itslearning.personproxyws.generated.PersonManagementServiceSync;
 import se.su.it.itslearning.personproxyws.generated.PersonManagementServiceSync_Service;
 //import sun.jvm.hotspot.HotSpotTypeDataBase;
@@ -27,18 +28,10 @@ public class CxfClient {
 
     private WsConfig wsConfig = new WsConfig();
 
-
-   /* public class ClientPasswordHandler implements CallbackHandler {
-        public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
-            WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
-            pc.setPassword("Password");
-        }
-    }*/
-
     public PersonManagementServiceSync getPersonManagementServiceSync() {
         PersonManagementServiceSync_Service ss = null;
         try {
-            ss = new PersonManagementServiceSync_Service(/*new URL("https://enterprise.itsltest.com/WCFServiceLibrary/PersonManagementServiceSync.svc")*/);
+            ss = new PersonManagementServiceSync_Service(new URL("https://enterprise.itsltest.com/WCFServiceLibrary/PersonManagementServiceSync.svc?wsdl"));
         } catch (Throwable t) {
             t.printStackTrace();
         }
@@ -53,7 +46,7 @@ public class CxfClient {
         try {
             ss = new ExtendedPersonManagementServiceSync_Service();
         } catch (Throwable t) {
-            t.printStackTrace();
+            throw new ItslearningRuntimeException(t);
         }
         ExtendedPersonManagementServiceSync port = ss.getBasicHttpBindingExtendedPersonManagementServiceSync();
         configure((BindingProvider) port);

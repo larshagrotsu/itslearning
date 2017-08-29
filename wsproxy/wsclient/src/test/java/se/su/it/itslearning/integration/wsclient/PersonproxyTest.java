@@ -20,7 +20,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 public class PersonproxyTest extends TestCase {
 
-    public void testX() {
+    public void testReadPerson() {
        /* // Create a trust manager that does not validate certificate chains
         TrustManager[] trustAllCerts = new TrustManager[]{
                 new X509TrustManager() {
@@ -53,7 +53,7 @@ public class PersonproxyTest extends TestCase {
         sourcedId.setIdentifier("sutest");
         readPersonRequest.setSourcedId(sourcedId);
         ReadPersonResponse readPersonResponse = personManagementServiceSync.readPerson(readPersonRequest);
-        System.out.println("XXX " + readPersonRequest.toString());
+        System.out.println("XXX " + readPersonResponse.toString());
     }
 
     public void testCreatePerson() {

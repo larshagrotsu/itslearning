@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/wsproxy/imsenterpriseproxy/imsenterpriseproxy.iml" filepath="$PROJECT_DIR$/wsproxy/imsenterpriseproxy/imsenterpriseproxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wsproxy/imsenterpriseservice.iml" filepath="$PROJECT_DIR$/wsproxy/imsenterpriseservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/itslcommon/itslcommon.iml" filepath="$PROJECT_DIR$/itslcommon/itslcommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/itslearning.iml" filepath="$PROJECT_DIR$/itslearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" filepath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" />
