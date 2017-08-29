@@ -61,9 +61,16 @@ public class CxfClient {
     }
 
     private void configure(BindingProvider port) {
+
         Map ctx = ((BindingProvider) port).getRequestContext();
-        //ctx.put(BindingProvider.USERNAME_PROPERTY, wsConfig.getUser());
-        //ctx.put(BindingProvider.PASSWORD_PROPERTY, wsConfig.getPwd());
+        ctx.put(BindingProvider.USERNAME_PROPERTY, wsConfig.getUser());
+        ctx.put(BindingProvider.PASSWORD_PROPERTY, wsConfig.getPwd());
+
+        for(Object key:ctx.keySet()) {
+            System.out.println(key.toString());
+            System.out.println(ctx.get(key));
+        }
+
         //ctx.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, "http://c
         ctx.put("ws-security.username", wsConfig.getUser());
         ctx.put("ws-security.password", wsConfig.getPwd());

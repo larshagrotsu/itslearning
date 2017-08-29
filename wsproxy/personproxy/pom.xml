@@ -11,8 +11,32 @@
 
     <artifactId>personproxy</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-security</artifactId>
+            <version>${cxf.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-policy</artifactId>
+            <version>${cxf.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf.xjcplugins</groupId>
+            <artifactId>cxf-xjc-ts</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf.xjc-utils/cxf-xjc-runtime -->
+        <dependency>
+            <groupId>org.apache.cxf.xjc-utils</groupId>
+            <artifactId>cxf-xjc-runtime</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 
-
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -36,6 +60,7 @@
                                         <extraarg>-p</extraarg>
                                         <extraarg>se.su.it.itslearning.personproxyws.generated</extraarg>
                                         <extraarg>-autoNameResolution</extraarg>
+                                        <extraarg>-xjc-Xts</extraarg>
                                     </extraargs>
                                 </wsdlOption>
                                 <wsdlOption>
@@ -48,6 +73,7 @@
                                         <extraarg>-p</extraarg>
                                         <extraarg>se.su.it.itslearning.extendedpersonproxyws.generated</extraarg>
                                         <extraarg>-autoNameResolution</extraarg>
+                                        <extraarg>-xjc-Xts</extraarg>
                                     </extraargs>
                                 </wsdlOption>
 
@@ -59,6 +85,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-ts</artifactId>
+                        <version>3.1.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

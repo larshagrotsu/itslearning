@@ -21,7 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class PersonproxyTest extends TestCase {
 
     public void testX() {
-        // Create a trust manager that does not validate certificate chains
+       /* // Create a trust manager that does not validate certificate chains
         TrustManager[] trustAllCerts = new TrustManager[]{
                 new X509TrustManager() {
                     public java.security.cert.X509Certificate[] getAcceptedIssuers() {
@@ -44,7 +44,7 @@ public class PersonproxyTest extends TestCase {
         } catch (Exception e) {
         }
         System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-        System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
+        System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");*/
         CxfClient cxfClient = new CxfClient();
         PersonManagementServiceSync personManagementServiceSync =
                 cxfClient.getPersonManagementServiceSync();
@@ -53,10 +53,10 @@ public class PersonproxyTest extends TestCase {
         sourcedId.setIdentifier("sutest");
         readPersonRequest.setSourcedId(sourcedId);
         ReadPersonResponse readPersonResponse = personManagementServiceSync.readPerson(readPersonRequest);
-        System.out.println('x');
+        System.out.println("XXX " + readPersonRequest.toString());
     }
 
-    public void xtestCreatePerson() {
+    public void testCreatePerson() {
         System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
         System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
         CxfClient cxfClient = new CxfClient();
@@ -76,7 +76,7 @@ public class PersonproxyTest extends TestCase {
         System.out.println('z' + readPersonResponse.toString());
     }
 
-    public void xtestDeletePerson() {
+    public void testDeletePerson() {
         System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
         System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
         CxfClient cxfClient = new CxfClient();
@@ -90,7 +90,7 @@ public class PersonproxyTest extends TestCase {
         System.out.println("www " + deletePersonResponse.toString());
     }
 
-    public void xtestReadAllPersons() throws DatatypeConfigurationException {
+    public void testReadAllPersons() throws DatatypeConfigurationException {
         System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
         System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
         CxfClient cxfClient = new CxfClient();
