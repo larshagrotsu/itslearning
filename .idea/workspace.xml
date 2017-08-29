@@ -38,11 +38,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/itslcommon/itslcommon.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/itslearning.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" afterPath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" afterPath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" afterPath="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" afterPath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -92,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -476,6 +477,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="personproxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itslearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itslearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wsproxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="membershipproxy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1121,7 +1140,7 @@
       <updated>1503479143384</updated>
       <workItem from="1503479155250" duration="5118000" />
       <workItem from="1503492046241" duration="4819000" />
-      <workItem from="1503562887582" duration="37999000" />
+      <workItem from="1503562887582" duration="38223000" />
     </task>
     <task id="LOCAL-00001" summary="Remove">
       <created>1503914225273</created>
@@ -1172,7 +1191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503991393934</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Unversioned">
+      <created>1503991502254</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1503991502254</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1208,7 +1234,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47936000" />
+    <option name="totallyTimeSpent" value="48160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1234,7 +1260,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35180724" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4513591" sideWeight="0.73049647" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4513591" sideWeight="0.73049647" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37124464" sideWeight="0.26998225" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1290,7 +1316,8 @@
     <MESSAGE value="Added tostring" />
     <MESSAGE value="Added cacert to be used when calling enterprise.itsltest.com" />
     <MESSAGE value="Unversioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unversioned files" />
+    <MESSAGE value="Unversioned" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unversioned" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1803,7 +1830,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
