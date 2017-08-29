@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da1f76d4-7732-4891-a60a-bddd24089b38" name="Default" comment="Added cacert to be used when calling enterprise.itsltest.com">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/itslcommon/src/main/java/se/su/it/itslearning/integration/common/util/ItslearningRuntimeException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsproxy/imsenterpriseproxy/pom.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_2_11.xml" afterPath="" />
@@ -40,14 +38,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/itslearning.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" afterPath="$PROJECT_DIR$/wsproxy/membershipproxy/membershipproxy.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" afterPath="$PROJECT_DIR$/wsproxy/personproxy/personproxy.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" afterPath="$PROJECT_DIR$/wsproxy/personproxy/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/pom.xml" afterPath="$PROJECT_DIR$/wsproxy/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/wsclient/pom.xml" afterPath="$PROJECT_DIR$/wsproxy/wsclient/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/wsclient/src/main/java/se/su/it/itslearning/integration/wsclient/util/CxfClient.java" afterPath="$PROJECT_DIR$/wsproxy/wsclient/src/main/java/se/su/it/itslearning/integration/wsclient/util/CxfClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/wsclient/src/test/java/se/su/it/itslearning/integration/wsclient/PersonproxyTest.java" afterPath="$PROJECT_DIR$/wsproxy/wsclient/src/test/java/se/su/it/itslearning/integration/wsclient/PersonproxyTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" afterPath="$PROJECT_DIR$/wsproxy/wsclient/wsclient.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -510,74 +504,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslcommon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslcommon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslcommon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itslearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1195,7 +1121,7 @@
       <updated>1503479143384</updated>
       <workItem from="1503479155250" duration="5118000" />
       <workItem from="1503492046241" duration="4819000" />
-      <workItem from="1503562887582" duration="37834000" />
+      <workItem from="1503562887582" duration="37999000" />
     </task>
     <task id="LOCAL-00001" summary="Remove">
       <created>1503914225273</created>
@@ -1239,7 +1165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503988555150</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Unversioned files">
+      <created>1503991393934</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1503991393934</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1275,7 +1208,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47771000" />
+    <option name="totallyTimeSpent" value="47936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1356,7 +1289,8 @@
     <MESSAGE value="Remove" />
     <MESSAGE value="Added tostring" />
     <MESSAGE value="Added cacert to be used when calling enterprise.itsltest.com" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added cacert to be used when calling enterprise.itsltest.com" />
+    <MESSAGE value="Unversioned files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unversioned files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
