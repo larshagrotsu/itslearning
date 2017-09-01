@@ -43,6 +43,11 @@
 
     </dependencies>
     <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/target/generated/src/main/java</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
@@ -53,7 +58,7 @@
                         <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <sourceRoot>${basedir}/src/main/java</sourceRoot>
+                            <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>https://enterprise.itsltest.com/WCFServiceLibrary/ImsEnterpriseServicesPort.svc?wsdl</wsdl>

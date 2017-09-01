@@ -44,6 +44,11 @@
 
     </dependencies>
     <build>
+        <!--<resources>
+            <resource>
+                <directory>${basedir}/target/generated/src/main/java</directory>
+            </resource>
+        </resources>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
@@ -58,7 +63,7 @@
                             <wsdlOptions>
                                 <wsdlOption>
 
-                                    <wsdl>${basedir}/src/main/resources/PersonManagementServiceSync.svc.xml</wsdl>
+                                    <wsdl>${basedir}/src/main/resources/PersonManagementServiceSync.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-client</extraarg>
                                         <extraarg>-b</extraarg>

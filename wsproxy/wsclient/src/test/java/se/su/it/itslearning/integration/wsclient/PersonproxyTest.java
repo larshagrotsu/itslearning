@@ -1,10 +1,13 @@
 package se.su.it.itslearning.integration.wsclient;
 import junit.framework.TestCase;
-import se.su.it.itslearning.extendedpersonproxyws.generated.ExtendedPersonManagementServiceSync;
-import se.su.it.itslearning.extendedpersonproxyws.generated.ReadAllPersonsRequest;
-import se.su.it.itslearning.extendedpersonproxyws.generated.ReadAllPersonsResponse;
+import se.su.it.itslearning.extendedpersonproxyws.generated.*;
 import se.su.it.itslearning.integration.wsclient.util.CxfClient;
 import se.su.it.itslearning.personproxyws.generated.*;
+import se.su.it.itslearning.personproxyws.generated.InstitutionRoleDType;
+import se.su.it.itslearning.personproxyws.generated.NameDType;
+import se.su.it.itslearning.personproxyws.generated.ObjectFactory;
+import se.su.it.itslearning.personproxyws.generated.Person;
+import se.su.it.itslearning.personproxyws.generated.UserIdDType;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -50,7 +53,7 @@ public class PersonproxyTest extends TestCase {
                 cxfClient.getPersonManagementServiceSync();
         ReadPersonRequest readPersonRequest = new ReadPersonRequest();
         ReadPersonRequest.SourcedId sourcedId = new ReadPersonRequest.SourcedId();
-        sourcedId.setIdentifier("sutest");
+        sourcedId.setIdentifier("123123123123");
         readPersonRequest.setSourcedId(sourcedId);
         ReadPersonResponse readPersonResponse = personManagementServiceSync.readPerson(readPersonRequest);
         System.out.println("XXX " + readPersonResponse.toString());
@@ -65,15 +68,34 @@ public class PersonproxyTest extends TestCase {
         CreatePersonRequest createPersonRequest = new CreatePersonRequest();
         Person person = new Person();
         UserIdDType userIdDType = new UserIdDType();
-        userIdDType.setUserIdValue("lhagr");
+        userIdDType.setUserIdValue("lhagr123");
+        userIdDType.setPassWord("hemligt");
         person.setUserId(userIdDType);
         person.setEmail("xyz@abc.se");
+
+        NameDType nameDType = new NameDType();
+        NameDType.PartName partName = new NameDType.PartName();
+        partName.setNamePartType("First");
+        partName.setNamePartValue("A");
+        NameDType.PartName partName2 = new NameDType.PartName();
+        partName2.setNamePartType("Last");
+        partName2.setNamePartValue("B");
+        //nameDType.getPartName().add(partName);
+        nameDType.getPartName().add(partName2);
+        nameDType.setNameType("test");
+        person .setName(nameDType);
+        person.setFormatName("A B");
+        InstitutionRoleDType institutionRoleDType = new InstitutionRoleDType();
+        institutionRoleDType.setPrimaryRoleType(true);
+        institutionRoleDType.setInstitutionRoleType("Student");
+        person.getInstitutionRole().add(institutionRoleDType);
+
         createPersonRequest.setPerson(person);
         CreatePersonRequest.SourcedId sourcedId = new CreatePersonRequest.SourcedId();
-        sourcedId.setIdentifier("123");
+        sourcedId.setIdentifier("123456");
         createPersonRequest.setSourcedId(sourcedId);
         CreatePersonResponse readPersonResponse = personManagementServiceSync.createPerson(createPersonRequest);
-        System.out.println('z' + readPersonResponse.toString());
+        System.out.println("ZZZZZZZZZ " + readPersonResponse.toString());
     }
 
     public void testDeletePerson() {
@@ -108,7 +130,14 @@ public class PersonproxyTest extends TestCase {
         readPersonRequest.setPageSize(100);
         readPersonRequest.setCreatedFrom(xmlGregorianCalendar);
         ReadAllPersonsResponse readPersonResponse = personManagementServiceSync.readAllPersons(readPersonRequest);
-        readPersonResponse.getPersonIdPairSet();
-        System.out.println("Yeaahh " + readPersonResponse);
+
+        System.out.println("Yeaahh " + readPersonResponse.toString());
+        for(se.su.it.itslearning.extendedpersonproxyws.generated.PersonIdPairDType personIdPairDType:readPersonResponse.getPersonIdPairSet().getPersonIdPair()) {
+            se.su.it.itslearning.extendedpersonproxyws.generated.Person person = personIdPairDType.getPerson();
+            System.out.println(person.getEmail());
+            System.out.println(person.getUserId().getUserIdValue());
+            System.out.println(person.getName());
+            System.out.println(personIdPairDType.getSourcedId().toString());
+        }
     }
 }
