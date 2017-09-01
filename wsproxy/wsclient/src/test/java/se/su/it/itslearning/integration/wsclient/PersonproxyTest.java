@@ -60,8 +60,7 @@ public class PersonproxyTest extends TestCase {
     }
 
     public void testCreatePerson() {
-        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-        System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
+
         CxfClient cxfClient = new CxfClient();
         PersonManagementServiceSync personManagementServiceSync =
                 cxfClient.getPersonManagementServiceSync();
@@ -99,8 +98,6 @@ public class PersonproxyTest extends TestCase {
     }
 
     public void testDeletePerson() {
-        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-        System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
         CxfClient cxfClient = new CxfClient();
         PersonManagementServiceSync personManagementServiceSync =
                 cxfClient.getPersonManagementServiceSync();
@@ -113,8 +110,8 @@ public class PersonproxyTest extends TestCase {
     }
 
     public void testReadAllPersons() throws DatatypeConfigurationException {
-        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-        System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
+        //System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
+        //System.setProperty("javax.net.ssl.trustStore", "/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/security/cacerts");
         CxfClient cxfClient = new CxfClient();
         ExtendedPersonManagementServiceSync personManagementServiceSync =
                 cxfClient.getExtendedPersonManagementServiceSync();
